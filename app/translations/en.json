@@ -1,0 +1,8 @@
+[
+    {"key": "hello_world",        "value": "Hello World: {{ var }}"},
+    {"key": "name",               "value": "Name|Names"},
+    {"key": "surname",            "value": "Surname"},
+    {"key": "user",               "value": "User|Users"},
+    {"key": "password",           "value": "Password|Passwords"},
+    {"key": "text",               "value": "first var: {{ first }}, second var: {{ second }}"}
+]

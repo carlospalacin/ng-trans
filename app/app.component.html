@@ -1,0 +1,23 @@
+<h1>{{ title }}</h1>
+<nav>
+    <ul>
+        <li><a (click)="trans.change('es')">ES</a></li>
+        <li><a (click)="trans.change('en')">EN</a></li>
+    </ul>
+</nav>
+
+<h3>Traducción:</h3>
+{{ trans.get('surname') }}
+
+<h3>Traducción con variable:</h3>
+{{ trans.get('hello_world', {var: 'Esto es una variable'}) }}
+
+<h3>Traducción con multiples variables:</h3>
+{{ trans.get('text', {first: 'primer valor', second: 'segundo valor' }) }}
+
+<h3>Traducción con plurarización:</h3>
+{{ trans.getChoice('name', 1) }} o {{ trans.getChoice('name', 2) }}
+
+<br><br><br>
+<h2>Trazas:</h2>
+{{ testRender()}}

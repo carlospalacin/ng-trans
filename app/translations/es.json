@@ -1,0 +1,8 @@
+[
+    {"key": "hello_world",        "value": "Hola Mundo: {{ var }}"},
+    {"key": "name",               "value": "Nombre|Nombres"},
+    {"key": "surname",            "value": "Apellido"},
+    {"key": "user",               "value": "Usuario|Usuarios"},
+    {"key": "password",           "value": "Contraseña|Contraseñas"},
+    {"key": "text",               "value": "primera variable: {{ first }}, segunta variable: {{ second }}"}
+]

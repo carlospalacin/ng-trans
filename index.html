@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <base href="/">
+    <title>Pulsar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- 1. Load libraries -->
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+    <!-- Material Angular -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="node_modules/@angular/material/core/theming/prebuilt/indigo-pink.css">
+
+    <!-- Polymer Webcompoments -->
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+
+    <!--Polymer elements -->
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
+    <link rel="import" href="bower_components/iron-icon/iron-icon.html">
+
+    <!-- Vaadin polymer -->
+    <link rel="import" href="bower_components/vaadin-date-picker/vaadin-date-picker.html">
+    
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+        // System.import('app').catch(function(err){ console.error(err); });
+        document.addEventListener('WebComponentsReady', function() {
+            // Get the locale id somehow
+            document.locale = 'es';
+            System.import('app').catch(function(err){ console.error(err); });
+        });
+    </script>
+  </head>
+  
+  <!-- 3. Display the application -->
+  <body>
+    <pulsar-app>Loading...</pulsar-app>
+  </body>
+</html>
