@@ -3,6 +3,8 @@
     <ul>
         <li><a (click)="trans.change('es')">ES</a></li>
         <li><a (click)="trans.change('en')">EN</a></li>
+        <li><a (click)="cambio()">Un cambio de variable</a></li>
+        <li><a (click)="cambioVacio()">Una llamada a una función vacía</a></li>
     </ul>
 </nav>
 
@@ -19,5 +21,10 @@
 {{ trans.getChoice('name', 1) }} o {{ trans.getChoice('name', 2) }}
 
 <br><br><br>
+<h2>Variable simple:</h2>
+{{ var01 }}
+
+<br><br><br>
 <h2>Trazas:</h2>
 {{ testRender()}}
+

@@ -13,10 +13,17 @@ var translator_service_1 = require('./shared/translator/translator.service');
 var AppComponent = (function () {
     function AppComponent(trans) {
         this.trans = trans;
+        this.var01 = "Valor por defecto";
     }
     AppComponent.prototype.testRender = function () {
         console.log('traza 01');
         return 'esto es una prueba que ejecuta un console log';
+    };
+    AppComponent.prototype.cambio = function () {
+        this.var01 = "valor cambiado";
+    };
+    AppComponent.prototype.cambioVacio = function () {
+        // no hago nada de nada
     };
     AppComponent = __decorate([
         core_1.Component({

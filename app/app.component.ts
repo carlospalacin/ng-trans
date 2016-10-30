@@ -10,6 +10,7 @@ import { TranslatorService }    from './shared/translator/translator.service';
 
 export class AppComponent {
 
+    private var01: string = "Valor por defecto";
     constructor(
         private trans: TranslatorService
     ){}
@@ -18,5 +19,15 @@ export class AppComponent {
     {
         console.log('traza 01');
         return 'esto es una prueba que ejecuta un console log'
+    }
+
+    cambio(): void
+    {
+        this.var01 = "valor cambiado";
+    }
+
+    cambioVacio(): void
+    {
+        // no hago nada de nada
     }
  }
