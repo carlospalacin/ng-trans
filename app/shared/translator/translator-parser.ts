@@ -1,4 +1,5 @@
-export class TranslatorParser {
+export class TranslatorParser 
+{
     templateMatcher: RegExp = /{{\s?([^{}\s]*)\s?}}/g;
 
     /**

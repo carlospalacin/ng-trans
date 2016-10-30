@@ -21,7 +21,6 @@ var TranslatorService = (function () {
         this.collections = [];
         this.isLoading = false;
         this.translatorParser = new translator_parser_1.TranslatorParser();
-        this.templateMatcher = /{{\s?([^{}\s]*)\s?}}/g;
     }
     /**
      * Load translations files
@@ -49,7 +48,7 @@ var TranslatorService = (function () {
                     return isFound = true;
                 }
             });
-            // Add new translationCollection
+            // add new translationCollection
             if (!isFound)
                 _this.collections.push({ module: module, translations: response.json() });
             if (checkOverload)
@@ -99,11 +98,15 @@ var TranslatorService = (function () {
      * Function to get translation
      */
     TranslatorService.prototype.getTranslation = function (key, params) {
+        //console.log('entra en TranslatorService.getTranslation');
         var translationParameters = this.getTranslationParameters(key);
         // get translations from module
         var translationCollection = this.collections.find(function (translationCollection) { return translationCollection.module == translationParameters.module; });
         if (translationCollection) {
             var translation = translationCollection.translations.find(function (translation) { return translation.key === translationParameters.index; });
+            // if tranlarion id not defined, return key
+            if (typeof translation === 'undefined')
+                return key;
             return this.translatorParser.interpolate(translation.value, params);
         }
         else {

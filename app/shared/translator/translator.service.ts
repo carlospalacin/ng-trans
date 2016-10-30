@@ -19,7 +19,6 @@ export class TranslatorService
     private collections: TranslationCollection[] = [];
     private isLoading: boolean = false;
     private translatorParser: TranslatorParser = new TranslatorParser();
-    private templateMatcher: RegExp = /{{\s?([^{}\s]*)\s?}}/g;
 
     constructor(
         private http: Http
@@ -57,7 +56,7 @@ export class TranslatorService
                         }
                     });
 
-                    // Add new translationCollection
+                    // add new translationCollection
                     if(! isFound)
                         this.collections.push({ module: module, translations: response.json() } as TranslationCollection);
 
@@ -125,6 +124,8 @@ export class TranslatorService
      */
     private getTranslation(key: string, params?: any): string
     {
+        //console.log('entra en TranslatorService.getTranslation');
+
         let translationParameters = this.getTranslationParameters(key);
 
         // get translations from module
@@ -133,6 +134,10 @@ export class TranslatorService
         if(translationCollection)
         {
             var translation: Translation = translationCollection.translations.find((translation: Translation) => { return translation.key === translationParameters.index });
+
+            // if tranlarion id not defined, return key
+            if(typeof translation === 'undefined')
+                return key;
 
             return this.translatorParser.interpolate(translation.value, params);
         }
