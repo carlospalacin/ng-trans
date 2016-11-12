@@ -3,31 +3,31 @@
     <ul>
         <li><a (click)="trans.change('es')">ES</a></li>
         <li><a (click)="trans.change('en')">EN</a></li>
-        <li><a (click)="cambio()">Un cambio de variable</a></li>
-        <li><a (click)="cambioVacio()">Una llamda vacía</a></li>
+        <li><a (click)="cambio()">A change of value</a></li>
+        <li><a (click)="cambioVacio()">A void call</a></li>
     </ul>
 </nav>
 
-<h3>Traducción:</h3>
+<h3>Translation:</h3>
 {{ trans.get('surname') }}
 
-<h3>Traducción con variable:</h3>
-{{ trans.get('hello_world', {var: 'Esto es una variable'}) }}
+<h3>Translation with a variable:</h3>
+{{ trans.get('hello_world', {var: 'This is a variable'}) }}
 
-<h3>Traducción con multiples variables:</h3>
-{{ trans.get('text', {first: 'primer valor', second: 'segundo valor' }) }}
+<h3>Translation more than one variable:</h3>
+{{ trans.get('text', {first: 'First value', second: 'Second value' }) }}
 
-<h3>Traducción con plurarización:</h3>
+<h3>Plural translation:</h3>
 {{ trans.getChoice('name', 1) }} o {{ trans.getChoice('name', 2) }}
 
-<h3>Traducción no definida:</h3>
+<h3>Not defined translation:</h3>
 {{ trans.get('XXXX') }} }}
 
 <br><br><br>
-<h2>Variable simple:</h2>
+<h2>Simple variable:</h2>
 {{ var01 }}
 
 <br><br><br>
-<h2>Trazas:</h2>
+<h2>Traces:</h2>
 {{ testRender()}}
 
